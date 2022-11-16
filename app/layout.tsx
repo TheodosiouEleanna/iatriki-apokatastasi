@@ -1,4 +1,5 @@
-import Header from "../ui/Header";
+import Footer from "ui/Footer";
+import Header from "ui/Header";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,7 +11,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

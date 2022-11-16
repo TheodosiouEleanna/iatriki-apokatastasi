@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./ui/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    colors: {
+      blue: "#1a76d1",
+    },
     extend: {
       colors: {
         primary: {
@@ -18,42 +24,9 @@ module.exports = {
           900: "#1e3a8a",
         },
       },
-    },
-    fontFamily: {
-      body: [
-        "Inter",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "system-ui",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji",
-      ],
-      sans: [
-        "Inter",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "system-ui",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji",
-      ],
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
 };

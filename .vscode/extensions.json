@@ -4,6 +4,7 @@
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
         "WallabyJs.quokka-vscode",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "styled-components.vscode-styled-components"
     ]
 }
