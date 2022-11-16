@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
   return (
     <header>
       <nav>
-        <div className="flex flex-wrap justify-end items-end  max-w-screen mb-4 bg-blue gap-4 p-2 text-primary-50">
+        <div className="flex flex-wrap justify-end items-end  max-w-screen mb-4 bg-blue gap-7  text-primary-50 py-3 pr-10">
           <Link
             className="text-sm flex gap-2 items-center"
             href={`tel:${PHONE}`}
