@@ -1,7 +1,32 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["no-relative-import-paths"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-import",
+    "eslint-plugin-jsx-a11y",
+    "eslint-plugin-prettier",
+    "eslint-plugin-react",
+    "eslint-plugin-react-hooks",
+    "eslint-plugin-no-relative-import-paths",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "no-relative-import-paths/no-relative-import-paths": [
       "warn",
       {
