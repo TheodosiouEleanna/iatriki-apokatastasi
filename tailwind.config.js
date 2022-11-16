@@ -6,11 +6,9 @@ module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./ui/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
-    colors: {
-      blue: "#1a76d1",
-    },
     extend: {
       colors: {
+        blue: "#1a76d1",
         primary: {
           50: "#eff6ff",
           100: "#dbeafe",

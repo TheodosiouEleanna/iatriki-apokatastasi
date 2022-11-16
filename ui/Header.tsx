@@ -17,17 +17,24 @@ const linksConfig = [
 const Header = (): JSX.Element => {
   return (
     <header>
-      <nav className="bg-white border-gray-200   py-2.5 dark:bg-gray-800">
-        <div className="flex flex-wrap justify-end items-end mx-auto max-w-screen-xl  bg-blue gap-4 p-2 text-primary-50">
-          <Link className="flex gap-2 items-center" href={`tel:${PHONE}`}>
-            <MdPhone size={30} /> {`tel:${PHONE}`}
+      <nav>
+        <div className="flex flex-wrap justify-end items-end  max-w-screen mb-4 bg-blue gap-4 p-2 text-primary-50">
+          <Link
+            className="text-sm flex gap-2 items-center"
+            href={`tel:${PHONE}`}
+          >
+            <MdPhone size={30} />
+            {PHONE}
           </Link>
-          <Link className="flex gap-2 items-center" href={`mailto:${MAIL}`}>
+          <Link
+            className="text-sm flex gap-2 items-center"
+            href={`mailto:${MAIL}`}
+          >
             <MdMail size={30} />
             {MAIL}
           </Link>
 
-          <Link className="flex gap-2 items-center" href="/map">
+          <Link className="text-sm flex gap-2 items-center" href="/map">
             <MdLocationPin size={30} />
             {ADDRESS}
           </Link>
