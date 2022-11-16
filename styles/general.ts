@@ -4,7 +4,9 @@ const blue = "#1a76d1";
 export const StyledButton = styled.button`
   transition: 0.3s;
 
-  ${(props: { variant: "primary" | "secondary" | "default" | "error" }) => {
+  ${(props: {
+    variant: "primary" | "secondary" | "default" | "error" | "transparent";
+  }) => {
     if (props.variant === "secondary")
       return css`
         border: 1px solid ${blue};
