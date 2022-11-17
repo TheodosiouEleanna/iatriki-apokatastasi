@@ -34,3 +34,20 @@ export const StyledButton = styled.button`
     `;
   }}
 `;
+
+export const InputField = styled.input`
+  background-color: #ffffff;
+  border-color: #ebebeb;
+  border-width: 2px;
+  border-radius: 8px;
+  min-height: 60px;
+  padding: 8px 20px;
+`;
+
+export const Card = styled.div`
+  display: grid;
+  width: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  border-radius: 24px;
+`;

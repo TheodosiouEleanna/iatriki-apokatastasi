@@ -16,5 +16,8 @@
   "editor.formatOnPaste": false,
   "editor.bracketPairColorization.enabled": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+"typescript.preferences.importModuleSpecifier": "non-relative",
+"[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 }
