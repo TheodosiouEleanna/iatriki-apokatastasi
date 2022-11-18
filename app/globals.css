@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +8,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, Oxygen, sans-serif;
+  scroll-behavior: smooth;
+  background: whitesmoke;
 }
 
 a {
@@ -27,4 +29,33 @@ a {
     color: white;
     background: black;
   }
+}
+
+.skata {
+  background-color: #d8dade;
+  background-image: url('https://design1.doctorsitecare.com/wp-content/uploads/2021/09/pexels-karolina-grabowska-4506214-scaled-1.jpeg');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 70vh;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }

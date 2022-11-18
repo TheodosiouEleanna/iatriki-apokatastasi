@@ -24,7 +24,7 @@ const footerSections = [
   }
 ];
 
-function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
   return (
     <footer className='bg-black text-white flex items-center flex-col py-10'>
       <div className='flex justify-center items-start gap-20 pb-7'>
@@ -44,6 +44,6 @@ function Footer(): JSX.Element {
       </section>
     </footer>
   );
-}
+};
 
 export default Footer;

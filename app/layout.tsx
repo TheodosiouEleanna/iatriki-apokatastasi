@@ -1,21 +1,19 @@
-import AppointmentForm from "ui/AppointmentForm";
-import Footer from "ui/Footer";
-import Header from "ui/Header";
-import "./globals.css";
+import AppointmentForm from 'ui/AppointmentForm';
+import Footer from 'ui/Footer';
+import Header from 'ui/Header';
+import './globals.css';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main className='mb-10'>{children}</main>
         <AppointmentForm />
         <Footer />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

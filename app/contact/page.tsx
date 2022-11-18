@@ -19,7 +19,7 @@ const contactInfo = [
   }
 ];
 
-export default function Map() {
+const ContactPage = () => {
   return (
     <main className='flex items-center justify-center gap-10'>
       <iframe
@@ -44,4 +44,6 @@ export default function Map() {
       </div>
     </main>
   );
-}
+};
+
+export default ContactPage;
