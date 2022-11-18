@@ -48,6 +48,14 @@ const inputFields: InputFieldProps[] = [
     inputType: 'date',
     placeholder: 'Ημερομηνία Ραντεβού',
     required: true
+  },
+  {
+    id: 'appointment-info',
+    dataField: 'info',
+    inputType: 'textarea',
+    placeholder: 'Επιπλέον Πληροφορίες',
+    required: true,
+    colSpan: 2
   }
 ];
 
@@ -71,12 +79,21 @@ const AppointmentForm = () => {
       <SectionTitle title='ΚΛΕΙΣΕ ΡΑΝΤΕΒΟΥ' />
       <Card className='mb-5'>
         <form>
-          <div className='grid p-4 grid-cols-2 gap-2'>
+          <div className='grid p-4 gap-2 sm:grid-cols-1 md:grid-cols-2'>
             {inputFields.map(inputField => {
               const { dataField, inputType, placeholder, required, colSpan, id, autocomplete } =
                 inputField;
 
-              return (
+              return inputType === 'textarea' ? (
+                <TextArea
+                  className={colSpan ? 'col-span-full' : ''}
+                  required={false}
+                  rows={4}
+                  value={formData.info as string}
+                  placeholder='Επιπλέον Πληροφορίες'
+                  onChange={onChangeFormData('info')}
+                />
+              ) : (
                 <TextField
                   id={id}
                   autoComplete={autocomplete}
@@ -89,14 +106,7 @@ const AppointmentForm = () => {
                 />
               );
             })}
-            <TextArea
-              className='col-span-full'
-              required={false}
-              rows={4}
-              value={formData.info as string}
-              placeholder='Επιπλέον Πληροφορίες'
-              onChange={onChangeFormData('info')}
-            />
+
             <Button className='mt-5' variant='primary'>
               Κλείσε Ραντεβού
             </Button>
