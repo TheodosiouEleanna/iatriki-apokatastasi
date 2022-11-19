@@ -44,7 +44,7 @@ const servicesInfo = [
 
 const ServicesPage = () => {
   return (
-    <main className='flex items-center justify-center mt-5 flex-col'>
+    <main className='flex items-center justify-center mt-6 flex-col'>
       <SectionTitle title='ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ' />
       <div className='w-2/3 grid  gap-10  justify-center items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  '>
         {servicesInfo.map(service => (
