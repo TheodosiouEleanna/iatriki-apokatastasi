@@ -77,7 +77,7 @@ const AppointmentForm = () => {
   return (
     <main className='flex items-center justify-center flex-col'>
       <SectionTitle title='ΚΛΕΙΣΕ ΡΑΝΤΕΒΟΥ' />
-      <Card className='mb-5'>
+      <Card className='mb-5' style={{ width: '600px' }}>
         <form>
           <div className='grid p-4 gap-2 sm:grid-cols-1 md:grid-cols-2'>
             {inputFields.map(inputField => {
@@ -86,6 +86,7 @@ const AppointmentForm = () => {
 
               return inputType === 'textarea' ? (
                 <TextArea
+                  key={dataField}
                   className={colSpan ? 'col-span-full' : ''}
                   required={false}
                   rows={4}
