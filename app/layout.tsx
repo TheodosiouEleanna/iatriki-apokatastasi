@@ -1,6 +1,7 @@
 import AppointmentForm from 'ui/AppointmentForm';
 import Footer from 'ui/Footer';
 import Header from 'ui/Header';
+
 import './globals.css';
 
 const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {

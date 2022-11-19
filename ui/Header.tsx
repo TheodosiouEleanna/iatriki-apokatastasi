@@ -3,11 +3,13 @@
 import { MdMail, MdPhone, MdLocationPin } from 'react-icons/md';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from 'public/images/logo.png';
+import logo from 'public/images/logo_small.png';
 import { ADDRESS, MAIL, PHONE } from 'data/general';
 import { usePathname } from 'next/navigation';
 import { useCallback } from 'react';
 import Button from 'ui/Button';
+import MobileHeader from 'ui/MobileHeader';
+import useWindowSize from 'hooks/useWindowSize';
 
 const linksConfig = [
   { path: '/', text: 'Αρχική' },
@@ -19,6 +21,9 @@ const linksConfig = [
 
 const Header = () => {
   const pathname = usePathname();
+  const { width } = useWindowSize();
+
+  const isMobile = width < 640;
 
   const scrollToAppointment = useCallback(() => {
     const appointmentDiv = document.getElementById('appointment-name');
@@ -29,7 +34,9 @@ const Header = () => {
     }
   }, []);
 
-  return (
+  return isMobile ? (
+    <MobileHeader />
+  ) : (
     <header>
       <nav className='pb-5 bg-white'>
         <div className='flex flex-wrap justify-end items-end  max-w-screen mb-4 bg-blue gap-7  text-primary-50 py-3 pr-10'>

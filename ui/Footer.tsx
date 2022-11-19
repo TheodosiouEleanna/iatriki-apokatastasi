@@ -27,7 +27,7 @@ const footerSections = [
 const Footer = (): JSX.Element => {
   return (
     <footer className='bg-black text-white flex items-center flex-col py-10'>
-      <div className='flex justify-center items-start gap-20 pb-7'>
+      <div className='flex justify-center items-start gap-20 pb-7  sm:flex-col md:flex-row flex-wrap'>
         {footerSections.map(footerSection => (
           <section key={footerSection.title}>
             <h4 className='text-3xl pb-4 font-bold'>{footerSection.title}</h4>
@@ -39,7 +39,7 @@ const Footer = (): JSX.Element => {
           </section>
         ))}
       </div>
-      <section>
+      <section className='text-center'>
         © Copyright 2022 iatriki-apokatastasi.gr. Με την επιφύλαξη παντός δικαιώματος.
       </section>
     </footer>
