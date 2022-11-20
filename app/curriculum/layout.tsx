@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -30,8 +31,8 @@ const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Elem
   const pathname = usePathname();
 
   return (
-    <div className='w-full flex justify-center items-center flex-col'>
-      <ul className='flex flex-wrap gap-4 my-5 items-center justify-center'>
+    <div className='w-full flex justify-center items-center flex-col mt-10'>
+      <ul className='block sm:flex'>
         {curriculumList.map(curriculum => {
           const { href, title } = curriculum;
           const isActive = pathname === href;
@@ -39,9 +40,10 @@ const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Elem
           return (
             <Link href={href} key={href}>
               <li
-                className={`rounded-xl  px-3 py-2  font-normal ${
-                  isActive ? 'bg-blue text-white' : 'bg-gray-500 text-white hover:bg-blue'
-                }`}
+                className={classNames(
+                  'px-4 py-2 sm:mr-0.5 flex items-center font-medium border-t border-r border-l border-gray-200 first:rounded-t-xl sm:rounded-t-xl cursor-pointer hover:text-blue',
+                  { 'bg-white text-blue': isActive }
+                )}
               >
                 {title}
               </li>
@@ -49,7 +51,9 @@ const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Elem
           );
         })}
       </ul>
-      <main className='w-full p-4'>{children}</main>
+      <section className='bg-white border border-gray-200 sm:rounded-r-xl rounded-b-xl w-full p-4 border-t-0'>
+        {children}
+      </section>
     </div>
   );
 };

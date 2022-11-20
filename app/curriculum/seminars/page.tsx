@@ -1,26 +1,30 @@
 import { seminars } from 'data/seminars';
+import Card from 'ui/Card';
 
 const Seminars = () => {
   return (
     <main className='flex items-center justify-center'>
-      <table className='table-auto border-collapse border border-slate-300 sm:w-full md:w-2/3'>
-        <thead>
-          <tr className='bg-blue text-white'>
-            <td className='p-2'>#</td>
-            <td className='p-2'>Τίτλος</td>
-          </tr>
-        </thead>
-        <tbody>
-          {seminars.map((seminar, idx) => (
-            <tr key={idx} className='even:bg-zinc-400 odd:bg-blue-100'>
-              <td className='p-2'>
-                <strong>{idx + 1}.</strong>
-              </td>
-              <td className='p-2'>{seminar}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <ul className='relative sm:w-full xl:w-3/4'>
+        {seminars.map((seminar, idx) => (
+          <li
+            key={idx}
+            className='grid grid-flow-row grid-cols-7 items-center justify-start gap-10'
+          >
+            <div className='border-r-4 border-blue flex items-center justify-start relative h-full'>
+              <h1 className='hidden lg:block break-words mr-2'>{seminar.date}</h1>
+              <span className='w-8 h-8 border-blue rounded-full bg-blue  -right-[17px] absolute flex items-center justify-center  text-white text-sm'>
+                {idx + 1}
+              </span>
+            </div>
+            <div className='flex justify-start col-span-6 my-4'>
+              <Card className='p-3'>
+                <h1 className='lg:hidden'>{seminar.date}</h1>
+                <h3 className='ml-4 text-lg font-semibold text-gray-900'>{seminar.title}</h3>
+              </Card>
+            </div>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 };

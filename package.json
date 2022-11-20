@@ -10,6 +10,7 @@
     "clear_install": "rm -rf node_modules/ yarn.lock && yarn install"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "material-ui-colors": "^1.0.0",

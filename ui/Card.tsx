@@ -11,7 +11,7 @@ const Card = (props: CardProps) => {
   const { className, children } = props;
 
   return (
-    <div {...props} className={`rounded-xl shadow-xl bg-white ${className}`}>
+    <div {...props} className={`rounded-xl shadow-md bg-white ${className}`}>
       {children}
     </div>
   );
