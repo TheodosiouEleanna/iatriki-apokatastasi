@@ -12,7 +12,7 @@ const Seminars = () => {
           >
             <div className='border-r-4 border-blue flex items-center justify-start relative h-full'>
               <h1 className='hidden lg:block break-words mr-2'>{seminar.date}</h1>
-              <span className='w-8 h-8 border-blue rounded-full bg-blue  -right-[17px] absolute flex items-center justify-center  text-white text-sm'>
+              <span className='w-7 h-7 border-blue rounded-full bg-blue  -right-[16px] absolute flex items-center justify-center  text-white text-sm'>
                 {idx + 1}
               </span>
             </div>

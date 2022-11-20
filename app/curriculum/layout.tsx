@@ -3,27 +3,33 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { MdBook, MdContactPage, MdEvent, MdVolunteerActivism, MdPerson } from 'react-icons/md';
 
 const curriculumList = [
   {
     href: '/curriculum',
-    title: 'ΒΙΟΓΡΑΦΙΚΟ'
+    title: 'ΒΙΟΓΡΑΦΙΚΟ',
+    icon: <MdContactPage size={20} />
   },
   {
     href: '/curriculum/seminars',
-    title: 'ΣΕΜΙΝΑΡΙΑ-ΣΥΝΕΔΡΙΑ'
+    title: 'ΣΕΜΙΝΑΡΙΑ-ΣΥΝΕΔΡΙΑ',
+    icon: <MdEvent size={20} />
   },
   {
     href: '/curriculum/scientific-work',
-    title: 'ΕΠΙΣΤΗΜΟΝΙΚΕΣ-ΕΡΓΑΣΙΕΣ'
+    title: 'ΕΠΙΣΤΗΜΟΝΙΚΕΣ-ΕΡΓΑΣΙΕΣ',
+    icon: <MdBook size={20} />
   },
   {
     href: '/curriculum/lectures',
-    title: 'ΔΙΑΛΕΞΕΙΣ'
+    title: 'ΔΙΑΛΕΞΕΙΣ',
+    icon: <MdPerson size={20} />
   },
   {
     href: '/curriculum/activities',
-    title: 'ΑΛΛΕΣ ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ'
+    title: 'ΑΛΛΕΣ ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ',
+    icon: <MdVolunteerActivism size={20} />
   }
 ];
 
@@ -34,17 +40,18 @@ const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Elem
     <div className='w-full flex justify-center items-center flex-col mt-10'>
       <ul className='block sm:flex'>
         {curriculumList.map(curriculum => {
-          const { href, title } = curriculum;
+          const { href, title, icon } = curriculum;
           const isActive = pathname === href;
 
           return (
             <Link href={href} key={href}>
               <li
                 className={classNames(
-                  'px-4 py-2 sm:mr-0.5 flex items-center font-medium border-t border-r border-l border-gray-200 first:rounded-t-xl sm:rounded-t-xl cursor-pointer hover:text-blue',
+                  'px-4 py-2 sm:mr-0.5 flex items-center font-medium border-t border-r border-l border-gray-200 first:rounded-t-xl sm:rounded-t-xl cursor-pointer hover:text-blue gap-2',
                   { 'bg-white text-blue': isActive }
                 )}
               >
+                {icon}
                 {title}
               </li>
             </Link>
