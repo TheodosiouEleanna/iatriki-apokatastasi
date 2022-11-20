@@ -60,13 +60,17 @@ const Header = () => {
 
           <ul className='flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0'>
             {linksConfig.map(linkConfig => {
-              const isLinkActive = linkConfig.path === pathname;
+              let isActive = pathname === linkConfig.path;
+
+              if (linkConfig.path !== '/' && pathname) {
+                isActive = pathname?.includes(linkConfig.path);
+              }
 
               return (
                 <li key={linkConfig.path}>
                   <Link
                     href={linkConfig.path}
-                    className={`hover:text-blue ${isLinkActive ? 'text-blue' : ''}`}
+                    className={`hover:text-blue ${isActive ? 'text-blue' : ''}`}
                   >
                     {linkConfig.text}
                   </Link>

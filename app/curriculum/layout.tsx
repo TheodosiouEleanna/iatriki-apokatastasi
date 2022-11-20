@@ -30,21 +30,26 @@ const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Elem
   const pathname = usePathname();
 
   return (
-    <div className='w-full flex justify-center items-center flex-col '>
-      <ul className='flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'>
+    <div className='w-full flex justify-center items-center flex-col'>
+      <ul className='flex flex-wrap gap-4 my-5 items-center justify-center'>
         {curriculumList.map(curriculum => {
           const { href, title } = curriculum;
-          const isSelected = pathname === href;
+          const isActive = pathname === href;
 
           return (
             <Link href={href} key={href}>
-              <li className={` p-4 ${isSelected ? 'bg-blue' : 'bg-gray-400'}`}> {title}</li>
+              <li
+                className={`rounded-xl  px-3 py-2  font-normal ${
+                  isActive ? 'bg-blue text-white' : 'bg-gray-500 text-white hover:bg-blue'
+                }`}
+              >
+                {title}
+              </li>
             </Link>
           );
         })}
       </ul>
-
-      <main>{children}</main>
+      <main className='w-full p-4'>{children}</main>
     </div>
   );
 };

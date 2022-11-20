@@ -9,7 +9,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }): JSX.Element =>
     <html lang='en'>
       <body>
         <Header />
-        <main className='mb-10'>{children}</main>
+        <main>{children}</main>
         <AppointmentForm />
         <Footer />
       </body>
