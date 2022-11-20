@@ -1,59 +1,51 @@
-// 'use client';
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const curriculumList = [
   {
-    href: '/',
+    href: '/curriculum',
     title: 'ΒΙΟΓΡΑΦΙΚΟ'
   },
   {
-    href: '/seminars',
+    href: '/curriculum/seminars',
     title: 'ΣΕΜΙΝΑΡΙΑ-ΣΥΝΕΔΡΙΑ'
   },
   {
-    href: '/scientific-work',
+    href: '/curriculum/scientific-work',
     title: 'ΕΠΙΣΤΗΜΟΝΙΚΕΣ-ΕΡΓΑΣΙΕΣ'
   },
   {
-    href: '/lectures',
+    href: '/curriculum/lectures',
     title: 'ΔΙΑΛΕΞΕΙΣ'
   },
   {
-    href: '/activities',
+    href: '/curriculum/activities',
     title: 'ΑΛΛΕΣ ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ'
   }
 ];
 
-const basePath = '/curriculum';
 const CurriculumLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <main className='relative w-full flex justify-start items-start '>
-      <div className='w-2/3 flex justify-center items-start'>
-        <div>
-          {curriculumList.map(curriculum => {
-            const { href, title } = curriculum;
-            const isSelected = pathname?.includes(href);
-            console.log({ isSelected, pathname });
+    <div className='w-full flex justify-center items-center flex-col '>
+      <ul className='flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 dark:text-gray-400'>
+        {curriculumList.map(curriculum => {
+          const { href, title } = curriculum;
+          const isSelected = pathname === href;
 
-            return (
-              <Link href={`${basePath}${href}`} key={href}>
-                <div
-                  className={`border-2 border-black p-4 ${isSelected ? 'bg-blue' : 'bg-gray-400'}`}
-                >
-                  {title}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+          return (
+            <Link href={href} key={href}>
+              <li className={` p-4 ${isSelected ? 'bg-blue' : 'bg-gray-400'}`}> {title}</li>
+            </Link>
+          );
+        })}
+      </ul>
 
-        {children}
-      </div>
-    </main>
+      <main>{children}</main>
+    </div>
   );
 };
 
