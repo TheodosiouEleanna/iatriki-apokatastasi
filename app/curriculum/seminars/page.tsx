@@ -12,9 +12,12 @@ const Seminars = () => {
           >
             <div className='border-r-4 border-blue flex items-center justify-start relative h-full'>
               <h1 className='hidden lg:block break-words mr-2'>{seminar.date}</h1>
-              <span className='w-8 h-8 border-blue rounded-full bg-blue  -right-[17px] absolute flex items-center justify-center  text-white text-sm'>
+              <span className=' absolute w-8 h-8 border-blue rounded-full bg-blue  -right-[17px] flex items-center justify-center  text-white text-sm'>
                 {idx + 1}
               </span>
+              {idx === 0 && (
+                <span className='absolute w-8 h-[calc(50%_-_1rem)] top-0 bg-white  -right-[17px]'></span>
+              )}
             </div>
             <div className='flex justify-start col-span-6 my-4'>
               <Card className='p-3'>
