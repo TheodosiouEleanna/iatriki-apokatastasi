@@ -1,11 +1,7 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "editor.detectIndentation": false,
-  "eslint.validate": [
-    "typescript",
-    "typescriptreact",
-    "javascript"
-  ],
+  "eslint.validate": ["typescript", "typescriptreact", "javascript"],
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
@@ -16,11 +12,12 @@
   "editor.formatOnPaste": false,
   "editor.bracketPairColorization.enabled": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
-"typescript.preferences.importModuleSpecifier": "non-relative",
-"[css]": {
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"[jsonc]": {
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["προλοθεραπεία"]
 }
