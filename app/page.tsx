@@ -1,3 +1,4 @@
+import AboutDoctor from 'ui/AboutDoctor';
 import Button from 'ui/Button';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         </div>
       </div>
       <div className='skata w-full' />
+      <AboutDoctor />
       {/* <Image className='w-full' src={reception} alt='recepetion' /> */}
     </main>
   );

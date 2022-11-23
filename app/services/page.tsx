@@ -1,46 +1,7 @@
 import Card from 'ui/Card';
-import botoxImage from 'public/images/services/botox.jpg';
 import Image from 'next/image';
 import SectionTitle from 'ui/SectionTitle';
-
-const servicesInfo = [
-  {
-    title: 'Botox',
-    description:
-      'Η πιο ευρέως διαδεδομένη και δημοφιλής τεχνική που εφαρμόζεται σήμερα στην πλαστική χειρουργική για την αντιμετώπιση των ρυτίδων είναι η θεραπεία με βοτουλινική τοξίνη, ευρέως γνωστή ως Botox/Dysport.   Η βοτουλινική τοξίνη είναι μία πρωτεΐνη, η οποία παράγεται από το κλωστηρίδιο Botulinum και κυκλοφορεί σε δύο συσκευασίες: Ως Botox (Allergan) και ως Dysport (Ipsen).    Τα τελευταία χρόνια, διαπιστώθηκε τυχαία πως το Botox είναι εξαιρετικά αποτελεσματικό στην εξάλειψη των ρυτίδων έκφρασης, καθώς χαλαρώνει συγκεκριμένους μύες του προσώπου, με αποτέλεσμα λόγω της ακινητοποίησης- μη σύσπασής τους, να εξαφανίζονται οι ρυτίδες στην περιοχή. Να σημειωθεί ότι στόχος της χρήσης του Botox είναι η προσωρινή αποδυνάμωση των μυών, όχι η παράλυσή τους.',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  },
-  {
-    title: 'Botox',
-    description: 'Mpla mpla mpla mpla',
-    image: botoxImage
-  }
-];
+import { servicesInfo } from 'data/services';
 
 const ServicesPage = () => {
   return (

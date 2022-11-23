@@ -40,15 +40,15 @@ const Header = () => {
     <header>
       <nav className='pb-5 bg-white'>
         <div className='flex flex-wrap justify-end items-end  max-w-screen mb-4 bg-blue gap-7  text-primary-50 py-3 pr-10'>
-          <Link className='text-sm flex gap-2 items-center active:text-blue' href={`tel:${PHONE}`}>
+          <Link className='text-md flex gap-2 items-center active:text-blue' href={`tel:${PHONE}`}>
             <MdPhone size={30} />
             {PHONE}
           </Link>
-          <Link className='text-sm flex gap-2 items-center' href={`mailto:${MAIL}`}>
+          <Link className='text-md flex gap-2 items-center' href={`mailto:${MAIL}`}>
             <MdMail size={30} />
             {MAIL}
           </Link>
-          <Link className='text-sm flex gap-2 items-center' href='/contact'>
+          <Link className='text-md flex gap-2 items-center' href='/contact'>
             <MdLocationPin size={30} />
             {ADDRESS}
           </Link>
