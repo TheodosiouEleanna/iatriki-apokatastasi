@@ -13,19 +13,14 @@ const ServicesPage = () => {
         {servicesInfo.map(service => (
           <Card
             key={service.title}
-            className='overflow-y-auto overflow-x-hidden max-h-[500px] w-full  col-span-1'
+            className='overflow-x-hidden max-h-[500px] w-full col-span-1 hover:scale-105 transition ease-in-out duration-300'
           >
-            <div className='w-full h-[260px] relative'>
+            <figure className='w-full h-[200px] m-h-[200px] relative z-0 brightness-75 transition ease-in-out duration-300 object-cover '>
               <Link href={service.link}>
-                <Image
-                  className='brightness-75 transition ease-in-out duration-150 object-cover hover:brightness-100'
-                  alt={service.title}
-                  src={service.image}
-                  fill
-                />
+                <Image className='' alt={service.title} src={service.image} fill />
               </Link>
-            </div>
-            <main className='p-5 w-full'>
+            </figure>
+            <main className='p-5 w-full z-10'>
               <h1 className=' font-extrabold text-2xl mb-4'>{service.title}</h1>
               <span className='break-words leading-6 '>
                 <TextToHtml text={service.description} />
