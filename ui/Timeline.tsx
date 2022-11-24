@@ -1,20 +1,12 @@
 import Card from 'ui/Card';
+import TextToHtml from 'ui/TextToHtml';
 
 type TimeInfo = { date: string; title: string };
+
 interface TimelineProps {
   timeInfo: TimeInfo[];
 }
 
-const formatTitle = (title: string) => (
-  <span>
-    {title.split('\n').map(el => (
-      <>
-        {el}
-        <br />
-      </>
-    ))}
-  </span>
-);
 // first and last child can be done through css
 const Timeline = ({ timeInfo }: TimelineProps) => {
   return (
@@ -36,7 +28,9 @@ const Timeline = ({ timeInfo }: TimelineProps) => {
           <div className='flex justify-start col-span-5 my-4'>
             <Card className='p-3'>
               <h1 className='lg:hidden font-semibold'>{date}</h1>
-              <h3 className='ml-4 text-lg font-semibold text-gray-900'>{formatTitle(title)}</h3>
+              <h3 className='ml-4 text-lg font-semibold text-gray-900'>
+                {<TextToHtml text={title} />}
+              </h3>
             </Card>
           </div>
         </li>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import SectionTitle from 'ui/SectionTitle';
 import { servicesInfo } from 'data/services';
 import Link from 'next/link';
+import TextToHtml from 'ui/TextToHtml';
 
 const ServicesPage = () => {
   return (
@@ -12,7 +13,7 @@ const ServicesPage = () => {
         {servicesInfo.map(service => (
           <Card
             key={service.title}
-            className='overflow-y-auto overflow-x-hidden max-h-[600px] w-full  col-span-1'
+            className='overflow-y-auto overflow-x-hidden max-h-[500px] w-full  col-span-1'
           >
             <div className='w-full h-[260px] relative'>
               <Link href={service.link}>
@@ -23,12 +24,12 @@ const ServicesPage = () => {
                   fill
                 />
               </Link>
-              <div className='font-extrabold text-xl text-white bg-black/50 absolute w-full py-1 px-2'>
-                <h1 className='text-center'>{service.title}</h1>
-              </div>
             </div>
-            <main className='p-4 w-full'>
-              <span className='break-words'>{service.description}</span>
+            <main className='p-5 w-full'>
+              <h1 className=' font-extrabold text-2xl mb-4'>{service.title}</h1>
+              <span className='break-words leading-6 '>
+                <TextToHtml text={service.description} />
+              </span>
             </main>
           </Card>
         ))}

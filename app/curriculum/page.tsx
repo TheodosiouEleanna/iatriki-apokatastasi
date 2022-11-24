@@ -1,4 +1,4 @@
-import Timeline from 'app/curriculum/Timeline';
+import Timeline from 'ui/Timeline';
 import {
   basicTraining,
   abroadTraining,
